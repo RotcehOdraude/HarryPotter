@@ -9,6 +9,8 @@ import com.example.harrypotter.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -17,10 +19,16 @@ class MainActivity : AppCompatActivity() {
 
     fun onClickStaff(view: View) {
         val intent = Intent(this, Characters::class.java)
+        val bundle = Bundle()
+        bundle.putString("seleccion", "Staff") //TODO: cambiar strings
+        intent.putExtras(bundle)
         startActivity(intent)
     }
     fun onClickStudent(view: View) {
         val intent = Intent(this, Characters::class.java)
+        val bundle = Bundle()
+        bundle.putString("seleccion", "Student") //TODO: cambiar strings
+        intent.putExtras(bundle)
         startActivity(intent)
     }
 
