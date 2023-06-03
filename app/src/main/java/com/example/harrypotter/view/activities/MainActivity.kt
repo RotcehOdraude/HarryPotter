@@ -1,4 +1,4 @@
-package com.example.harrypotter
+package com.example.harrypotter.view.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -13,8 +13,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
     }
 
     fun onClickStaff(view: View) {
