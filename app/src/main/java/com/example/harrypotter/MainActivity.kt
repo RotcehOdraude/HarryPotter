@@ -5,8 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.example.harrypotter.databinding.ActivityMainBinding
-import com.example.harrypotter.databinding.ActivityStaffBinding
-import com.example.harrypotter.databinding.ActivityStudentBinding
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -19,11 +18,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onClickStaff(view: View) {
-        val intent = Intent(this, Student::class.java)
+        val intent = Intent(this, Characters::class.java)
         startActivity(intent)
     }
     fun onClickStudent(view: View) {
-        val intent = Intent(this, Staff::class.java)
+        val intent = Intent(this, Characters::class.java)
         startActivity(intent)
     }
 
