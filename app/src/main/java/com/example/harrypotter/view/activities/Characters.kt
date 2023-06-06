@@ -28,26 +28,22 @@ class Characters : AppCompatActivity() {
         val bundle = intent.extras
         val seleccion = bundle?.getString("seleccion", "")
 
-        Log.d(Constants.LOGTAG, "Respuesta del bundle: ${seleccion}")
+        //Log.d(Constants.LOGTAG, "Respuesta del bundle: ${seleccion}")
 
         if (seleccion.equals("Student")) {
             //Toast.makeText(this, "Seleccion ${seleccion}", Toast.LENGTH_SHORT).show()
-
             val call = RetrofitService.getRetrofit().create(HPApi::class.java)
                 .getStudents("api/characters/students")
-            Log.d(Constants.LOGTAG, "Respuesta del call: ${call}")
+            //Log.d(Constants.LOGTAG, "Respuesta del call: ${call}")
 
             call.enqueue(object : Callback<ArrayList<StudentHP>> {
                 override fun onResponse(
                     call: Call<ArrayList<StudentHP>>,
                     response: Response<ArrayList<StudentHP>>
                 ) {
+                    //Log.d(Constants.LOGTAG, "Respuesta del servidor: ${response.toString()}")
+                    //Log.d(Constants.LOGTAG, "Datos: ${response.body().toString()}")
                     binding.pbConexion.visibility = View.GONE
-
-                    Log.d(Constants.LOGTAG, "Respuesta del servidor: ${response.toString()}")
-
-                    Log.d(Constants.LOGTAG, "Datos: ${response.body().toString()}")
-
                     binding.rvMenu.layoutManager = LinearLayoutManager(this@Characters)
                     binding.rvMenu.adapter = StudentsAdapter(
                         this@Characters,

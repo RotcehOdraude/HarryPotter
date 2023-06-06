@@ -15,7 +15,7 @@
         android:background="@drawable/background_game"
         android:paddingBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvTitle" />
+        app:layout_constraintTop_toTopOf="@+id/tvCharacterName" />
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/ivThumbnail"
@@ -23,7 +23,8 @@
         android:layout_height="110dp"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
-        android:scaleType="centerCrop"
+        android:scaleType="centerInside"
+        android:src="@drawable/sombrero"
         app:layout_constraintEnd_toEndOf="@id/guideline8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -31,7 +32,7 @@
 
 
     <TextView
-        android:id="@+id/tvTitle"
+        android:id="@+id/tvCharacterName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -45,11 +46,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/guideline8"
         app:layout_constraintTop_toTopOf="@+id/guideline7"
-        tools:text="Title" />
+        tools:text="Character name" />
 
 
     <TextView
-        android:id="@+id/tvDeveloper"
+        android:id="@+id/tvActorName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -57,16 +58,16 @@
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/ubuntu"
         android:includeFontPadding="false"
-        android:text="Nintendo"
         android:textColor="#3FE0DD"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@id/guideline5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
-        app:layout_constraintTop_toTopOf="@id/guideline6" />
+        app:layout_constraintTop_toTopOf="@id/guideline6"
+        tools:text="Actor" />
 
     <TextView
-        android:id="@+id/tvReleased"
+        android:id="@+id/tvAltText1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -74,30 +75,30 @@
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/ubuntu"
         android:includeFontPadding="false"
-        android:text="Released: 2020"
-        android:textColor="#4A5B82"
+        android:textColor="#2196F3"
         android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
-        app:layout_constraintBottom_toBottomOf="@id/guideline4"
-        app:layout_constraintTop_toTopOf="@id/guideline5" />
+        app:layout_constraintTop_toTopOf="@id/guideline5"
+        tools:text="Lorem Ipsum" />
 
     <TextView
-        android:id="@+id/tvRating"
+        android:id="@+id/tvAltText2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="3dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/ubuntu"
         android:includeFontPadding="false"
-        android:text="ESRB Rating: E-Everyone"
         android:textColor="#F5DC53"
         android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toTopOf="@id/guideline4"
-        app:layout_constraintBottom_toBottomOf="@id/guideline3"/>
+        tools:text="Lorem ipsum" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
