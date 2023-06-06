@@ -15,7 +15,7 @@ interface HPApi {
         @Url url: String?    //getStudents("api/characters")
     ): Call<ArrayList<StudentHP>>
 
-    @GET("/staff")
+    @GET
     fun getStaff(
         @Url url: String?    //getStudents("api/characters/staff")
     ): Call<ArrayList<StaffHP>>
