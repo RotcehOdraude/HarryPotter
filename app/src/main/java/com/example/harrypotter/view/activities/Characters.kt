@@ -100,7 +100,6 @@ class Characters : AppCompatActivity() {
 
     private fun studentClicked(student: StudentHP) {
         //Toast.makeText(this, "Clic a ${student.actor}", Toast.LENGTH_SHORT).show()
-
         val bundle = Bundle()
         bundle.putString("id", student.id)
         val intent = Intent(this, Details::class.java)
@@ -109,9 +108,7 @@ class Characters : AppCompatActivity() {
     }
 
     private fun staffClicked(staff: StaffHP) {
-        Toast.makeText(this, "Clic en el elemento con títiulo ${staff.actor}", Toast.LENGTH_SHORT)
-            .show()
-
+        //Toast.makeText(this, "Clic en el elemento con títiulo ${staff.actor}", Toast.LENGTH_SHORT.show()
         val bundle = Bundle()
         bundle.putString("id", staff.id)
         val intent = Intent(this, Details::class.java)

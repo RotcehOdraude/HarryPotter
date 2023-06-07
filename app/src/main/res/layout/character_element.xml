@@ -12,10 +12,12 @@
         android:id="@+id/viewBackground"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@drawable/background_game"
+        android:background="@color/md_theme_dark_onPrimary"
         android:paddingBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvCharacterName" />
+        app:layout_constraintTop_toTopOf="@+id/tvCharacterName"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="4dp" />
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/ivThumbnail"
@@ -40,7 +42,7 @@
         android:fontFamily="@font/ubuntu_bold"
         android:includeFontPadding="false"
         android:paddingTop="8dp"
-        android:textColor="#CBD5ED"
+        android:textColor="@color/md_theme_dark_primary"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@id/guideline6"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +60,7 @@
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/ubuntu"
         android:includeFontPadding="false"
-        android:textColor="#3FE0DD"
+        android:textColor="@color/md_theme_dark_tertiary"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@id/guideline5"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,7 +77,7 @@
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/ubuntu"
         android:includeFontPadding="false"
-        android:textColor="#2196F3"
+        android:textColor="@color/md_theme_dark_secondary"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
