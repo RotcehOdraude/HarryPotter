@@ -1,5 +1,6 @@
 package com.example.harrypotter.view.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -98,18 +99,13 @@ class Characters : AppCompatActivity() {
     }
 
     private fun studentClicked(student: StudentHP) {
-        Toast.makeText(this, "Clic en el elemento con títiulo ${student.actor}", Toast.LENGTH_SHORT)
-            .show()
+        //Toast.makeText(this, "Clic a ${student.actor}", Toast.LENGTH_SHORT).show()
 
         val bundle = Bundle()
-
         bundle.putString("id", student.id)
-
-        //val intent = Intent(this, Details::class.java)
-
-        //intent.putExtras(bundle)
-
-        //startActivity(intent)
+        val intent = Intent(this, Details::class.java)
+        intent.putExtras(bundle)
+        startActivity(intent)
     }
 
     private fun staffClicked(staff: StaffHP) {
@@ -117,13 +113,9 @@ class Characters : AppCompatActivity() {
             .show()
 
         val bundle = Bundle()
-
         bundle.putString("id", staff.id)
-
-        //val intent = Intent(this, Details::class.java)
-
-        //intent.putExtras(bundle)
-
-        //startActivity(intent)
+        val intent = Intent(this, Details::class.java)
+        intent.putExtras(bundle)
+        startActivity(intent)
     }
 }

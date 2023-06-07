@@ -15,12 +15,15 @@
         android:theme="@style/Theme.HarryPotter"
         tools:targetApi="31">
         <activity
+            android:name=".view.activities.Details"
+            android:exported="false" />
+        <activity
             android:name=".view.activities.Characters"
             android:exported="false" />
         <activity
             android:name=".view.activities.MainActivity"
-            android:screenOrientation="portrait"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
