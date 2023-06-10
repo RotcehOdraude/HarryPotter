@@ -8,11 +8,10 @@ import com.bumptech.glide.Glide
 import com.example.harrypotter.R
 import com.example.harrypotter.databinding.CharacterElementBinding
 import com.example.harrypotter.model.StaffHP
-import com.example.harrypotter.model.StudentHP
 
 class StaffAdapter(
     private var context: Context,
-    private var students: ArrayList<StaffHP>,
+    private var staff: ArrayList<StaffHP>,
     private val clickListener: (StaffHP) -> Unit
 ) : RecyclerView.Adapter<StaffAdapter.ViewHolder>() {
 
@@ -27,15 +26,17 @@ class StaffAdapter(
         return ViewHolder(binding)
     }
 
-    override fun getItemCount(): Int = students.size
+    override fun getItemCount(): Int = staff.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.tvName.text = students[position].name
-        holder.tvActor.text = students[position].actor
+        val empty = context.getString(R.string.EMPTY)
 
-        if (!students[position].image?.isEmpty()!!) {
+        holder.tvName.text = if(!staff[position].name.isNullOrBlank()) staff[position].name else empty
+        holder.tvActor.text = if(!staff[position].actor.isNullOrBlank()) staff[position].actor else empty
+
+        if (!staff[position].image?.isEmpty()!!) {
             Glide.with(context)
-                .load(students[position].image)
+                .load(staff[position].image)
                 .into(holder.ivStaff)
         } else {
             holder.ivStaff.setImageResource(R.drawable.character)
@@ -43,7 +44,7 @@ class StaffAdapter(
 
         holder.itemView.setOnClickListener {
             //Para programar los eventos click al elemento completo del ViewHolder
-            clickListener(students[position])
+            clickListener(staff[position])
         }
     }
 }

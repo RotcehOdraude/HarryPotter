@@ -1,7 +1,7 @@
 package com.example.harrypotter.view.adapters
 
 import android.content.Context
-import android.util.Log
+//import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.example.harrypotter.R
 import com.example.harrypotter.databinding.CharacterElementBinding
 import com.example.harrypotter.model.StudentHP
-import com.example.harrypotter.utils.Constants
+//import com.example.harrypotter.utils.Constants
 
 class StudentsAdapter(
     private var context: Context,
@@ -29,8 +29,10 @@ class StudentsAdapter(
 
     override fun getItemCount(): Int = students.size
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.tvName.text = students[position].name
-        holder.tvActor.text = students[position].actor
+        val empty = context.getString(R.string.EMPTY)
+
+        holder.tvName.text = if(!students[position].name.isNullOrBlank()) students[position].name else empty
+        holder.tvActor.text = if(!students[position].actor.isNullOrBlank()) students[position].actor else empty
 
         if (!students[position].image?.isEmpty()!!) {
             Glide.with(context)

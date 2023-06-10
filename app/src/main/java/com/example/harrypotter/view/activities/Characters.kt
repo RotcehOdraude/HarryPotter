@@ -3,7 +3,7 @@ package com.example.harrypotter.view.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+//import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,7 +12,7 @@ import com.example.harrypotter.model.StaffHP
 import com.example.harrypotter.model.StudentHP
 import com.example.harrypotter.network.HPApi
 import com.example.harrypotter.network.RetrofitService
-import com.example.harrypotter.utils.Constants
+//import com.example.harrypotter.utils.Constants
 import com.example.harrypotter.view.adapters.StaffAdapter
 import com.example.harrypotter.view.adapters.StudentsAdapter
 import retrofit2.Call

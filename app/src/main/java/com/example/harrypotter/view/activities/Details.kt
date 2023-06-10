@@ -2,7 +2,7 @@ package com.example.harrypotter.view.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+//import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.bumptech.glide.Glide
@@ -11,7 +11,7 @@ import com.example.harrypotter.databinding.ActivityDetailsBinding
 import com.example.harrypotter.model.StudentDetailHP
 import com.example.harrypotter.network.HPApi
 import com.example.harrypotter.network.RetrofitService
-import com.example.harrypotter.utils.Constants
+//import com.example.harrypotter.utils.Constants
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -28,7 +28,7 @@ class Details : AppCompatActivity() {
         val bundle = intent.extras
         val id = bundle?.getString("id", "")
         val call = RetrofitService.getRetrofit().create(HPApi::class.java)
-            .getStudentDetail("/api/character/$id")
+            .getStudentDetail("/api/character/$id") //TODO: En caso de que la respuesta del servidor regrese diferentes atributos para los data class, manejar la lógica de Student y Staff por separado
 
        // Log.d(Constants.LOGTAG, "Respuesta del call: $call")
 
