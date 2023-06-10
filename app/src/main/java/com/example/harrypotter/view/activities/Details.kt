@@ -38,8 +38,14 @@ class Details : AppCompatActivity() {
                 response: Response<ArrayList<StudentDetailHP>>
             ) {
                 binding.pbConexion.visibility = View.GONE
-                binding.tvTitle.text = response.body()!![0].name
-                binding.tvLongDesc.text = response.body()!![0].actor
+
+                binding.tvCharacterName.text = response.body()!![0].name
+                binding.tvHouse.text = "Casa: " + response.body()!![0].house    //TODO: Quitar hardcoding
+                binding.tvDateOfBirth.text = "Fecha de Nacimiento: " + response.body()!![0].dateOfBirth
+                binding.tvAncestry.text = "Ascendencia: " + response.body()!![0].ancestry
+                binding.tvPatronus.text = "Patronus: " + response.body()!![0].patronus
+                binding.tvActorName.text = "Actor: " + response.body()!![0].actor
+
 
                 Glide.with(this@Details)
                     .load(response.body()!![0].image)

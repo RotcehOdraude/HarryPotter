@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.harrypotter.R
 import com.example.harrypotter.databinding.CharacterElementBinding
 import com.example.harrypotter.model.StaffHP
 import com.example.harrypotter.model.StudentHP
@@ -32,11 +33,13 @@ class StaffAdapter(
         holder.tvName.text = students[position].name
         holder.tvActor.text = students[position].actor
 
-        Glide.with(context)
-            .load(students[position].image)
-            .into(holder.ivStaff)
-
-        //holder.tvDeveloper.text = "EA Sports"
+        if (!students[position].image?.isEmpty()!!) {
+            Glide.with(context)
+                .load(students[position].image)
+                .into(holder.ivStaff)
+        } else {
+            holder.ivStaff.setImageResource(R.drawable.character)
+        }
 
         holder.itemView.setOnClickListener {
             //Para programar los eventos click al elemento completo del ViewHolder

@@ -1,12 +1,15 @@
 package com.example.harrypotter.view.adapters
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.harrypotter.R
 import com.example.harrypotter.databinding.CharacterElementBinding
 import com.example.harrypotter.model.StudentHP
+import com.example.harrypotter.utils.Constants
 
 class StudentsAdapter(
     private var context: Context,
@@ -18,18 +21,25 @@ class StudentsAdapter(
         val tvName = view.tvCharacterName
         val tvActor = view.tvActorName
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = CharacterElementBinding.inflate(LayoutInflater.from(context))
         return ViewHolder(binding)
     }
+
     override fun getItemCount(): Int = students.size
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.tvName.text = students[position].name
         holder.tvActor.text = students[position].actor
 
-        Glide.with(context)
-            .load(students[position].image)
-            .into(holder.ivStudent)
+        if (!students[position].image?.isEmpty()!!) {
+            Glide.with(context)
+                .load(students[position].image)
+                .into(holder.ivStudent)
+        } else {
+            holder.ivStudent.setImageResource(R.drawable.character)
+        }
+
 
         holder.itemView.setOnClickListener {
             //Para programar los eventos click al elemento completo del ViewHolder
