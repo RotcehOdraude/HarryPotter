@@ -6,9 +6,9 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.bumptech.glide.Glide
+import com.example.harrypotter.R
 import com.example.harrypotter.databinding.ActivityDetailsBinding
 import com.example.harrypotter.model.StudentDetailHP
-import com.example.harrypotter.model.StudentHP
 import com.example.harrypotter.network.HPApi
 import com.example.harrypotter.network.RetrofitService
 import com.example.harrypotter.utils.Constants
@@ -30,26 +30,38 @@ class Details : AppCompatActivity() {
         val call = RetrofitService.getRetrofit().create(HPApi::class.java)
             .getStudentDetail("/api/character/$id")
 
-        Log.d(Constants.LOGTAG, "Respuesta del call: ${call}")
+       // Log.d(Constants.LOGTAG, "Respuesta del call: $call")
 
         call.enqueue(object : Callback<ArrayList<StudentDetailHP>> {
             override fun onResponse(
                 call: Call<ArrayList<StudentDetailHP>>,
                 response: Response<ArrayList<StudentDetailHP>>
             ) {
+                val personaje = response.body()!![0].name
+                val casa = response.body()!![0].house
+                val fechaDeNacimiento = response.body()!![0].dateOfBirth
+                val ascendencia = response.body()!![0].ancestry
+                val patronus = response.body()!![0].patronus
+                val actor = response.body()!![0].actor
+                val empty = getString(R.string.EMPTY)
+
                 binding.pbConexion.visibility = View.GONE
 
-                binding.tvCharacterName.text = response.body()!![0].name
-                binding.tvHouse.text = "Casa: " + response.body()!![0].house    //TODO: Quitar hardcoding
-                binding.tvDateOfBirth.text = "Fecha de Nacimiento: " + response.body()!![0].dateOfBirth
-                binding.tvAncestry.text = "Ascendencia: " + response.body()!![0].ancestry
-                binding.tvPatronus.text = "Patronus: " + response.body()!![0].patronus
-                binding.tvActorName.text = "Actor: " + response.body()!![0].actor
+                binding.tvCharacterName.text = if (!personaje.isNullOrBlank()) "$personaje" else empty
 
+                binding.tvHouse.text = if (!casa.isNullOrBlank()) "${getString(R.string.house)}: $casa" else "${getString(R.string.house)}: $empty"
+                binding.tvDateOfBirth.text = if (!fechaDeNacimiento.isNullOrBlank()) "${getString(R.string.dateOfBirth)}: $fechaDeNacimiento" else "${getString(R.string.dateOfBirth)}: $empty"
+                binding.tvAncestry.text = if (!ascendencia.isNullOrBlank()) "${getString(R.string.ancestry)}: $ascendencia" else "${getString(R.string.ancestry)}: $empty"
+                binding.tvPatronus.text = if (!patronus.isNullOrBlank()) "${getString(R.string.patronus)}: $patronus" else "${getString(R.string.patronus)}: $empty"
+                binding.tvActorName.text = if (!actor.isNullOrBlank()) "${getString(R.string.actor)}: $actor" else "${getString(R.string.actor)}: $empty"
 
-                Glide.with(this@Details)
-                    .load(response.body()!![0].image)
-                    .into(binding.ivImage)
+                if (!response.body()!![0].image?.isEmpty()!!) {
+                    Glide.with(this@Details)
+                        .load(response.body()!![0].image)
+                        .into(binding.ivImage)
+                } else {
+                   binding.ivImage.setImageResource(R.drawable.character)
+                }
             }
 
             override fun onFailure(

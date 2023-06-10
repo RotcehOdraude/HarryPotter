@@ -66,7 +66,7 @@ class Characters : AppCompatActivity() {
 
             val call = RetrofitService.getRetrofit().create(HPApi::class.java)
                 .getStaff("api/characters/staff")
-            Log.d(Constants.LOGTAG, "Respuesta del call: ${call}")
+            //Log.d(Constants.LOGTAG, "Respuesta del call: $call")
 
             call.enqueue(object : Callback<ArrayList<StaffHP>> {
                 override fun onResponse(
@@ -75,9 +75,9 @@ class Characters : AppCompatActivity() {
                 ) {
                     binding.pbConexion.visibility = View.GONE
 
-                    Log.d(Constants.LOGTAG, "Respuesta del servidor: ${response.toString()}")
+                    //Log.d(Constants.LOGTAG, "Respuesta del servidor: $response")
 
-                    Log.d(Constants.LOGTAG, "Datos: ${response.body().toString()}")
+                    //Log.d(Constants.LOGTAG, "Datos: ${response.body().toString()}")
 
                     binding.rvMenu.layoutManager = LinearLayoutManager(this@Characters)
                     binding.rvMenu.adapter = StaffAdapter(

@@ -20,12 +20,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
 
                 <TextView
                     android:id="@+id/tvCharacterName"
@@ -111,8 +109,6 @@
                     android:textColor="@color/md_theme_dark_secondary"
                     android:textSize="20sp"
                     tools:text="Description" />
-
-
             </LinearLayout>
         </ScrollView>
 
