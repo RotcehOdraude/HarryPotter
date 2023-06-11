@@ -71,7 +71,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/harry_potter"
         android:text="@string/tvTitle"
-        android:textColor="@color/md_theme_dark_primary"
+        android:textColor="@color/md_theme_dark_tertiary"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
