@@ -15,4 +15,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shimmer_auto_start="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/shimer_element"></include>
+
+            <include layout="@layout/shimer_element"></include>
+
+            <include layout="@layout/shimer_element"></include>
+
+            <include layout="@layout/shimer_element"></include>
+
+            <include layout="@layout/shimer_element"></include>
+
+            <include layout="@layout/shimer_element"></include>
+
+            <include layout="@layout/shimer_element"></include>
+
+            <include layout="@layout/shimer_element"></include>
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@ import android.os.Bundle
 //import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.harrypotter.databinding.ActivityCharactersBinding
 import com.example.harrypotter.model.StaffHP
@@ -42,6 +43,7 @@ class Characters : AppCompatActivity() {
                     call: Call<ArrayList<StudentHP>>,
                     response: Response<ArrayList<StudentHP>>
                 ) {
+                    binding.shimmerViewContainer.isVisible = false
                     //Log.d(Constants.LOGTAG, "Respuesta del servidor: ${response.toString()}")
                     //Log.d(Constants.LOGTAG, "Datos: ${response.body().toString()}")
 
@@ -56,7 +58,7 @@ class Characters : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<ArrayList<StudentHP>>, t: Throwable) {
-
+                    binding.shimmerViewContainer.isVisible = false
                     Toast.makeText(this@Characters, "No hay conexión", Toast.LENGTH_SHORT).show()
                 }
 
@@ -73,8 +75,7 @@ class Characters : AppCompatActivity() {
                     call: Call<ArrayList<StaffHP>>,
                     response: Response<ArrayList<StaffHP>>
                 ) {
-
-
+                    binding.shimmerViewContainer.isVisible = false
                     //Log.d(Constants.LOGTAG, "Respuesta del servidor: $response")
 
                     //Log.d(Constants.LOGTAG, "Datos: ${response.body().toString()}")
@@ -90,7 +91,7 @@ class Characters : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<ArrayList<StaffHP>>, t: Throwable) {
-
+                    binding.shimmerViewContainer.isVisible = false
                     Toast.makeText(this@Characters, "No hay conexión", Toast.LENGTH_SHORT).show()
                 }
 
