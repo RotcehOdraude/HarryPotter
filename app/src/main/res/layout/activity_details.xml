@@ -28,7 +28,7 @@
                 android:fontFamily="@font/harry_potter"
                 android:gravity="center_horizontal"
                 android:paddingBottom="10dp"
-                android:textColor="@color/md_theme_dark_secondary"
+                android:textColor="@color/md_theme_dark_tertiary"
                 android:textSize="48sp"
                 tools:text="Title" />
 
