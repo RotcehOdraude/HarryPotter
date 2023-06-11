@@ -44,7 +44,7 @@ class Characters : AppCompatActivity() {
                 ) {
                     //Log.d(Constants.LOGTAG, "Respuesta del servidor: ${response.toString()}")
                     //Log.d(Constants.LOGTAG, "Datos: ${response.body().toString()}")
-                    binding.pbConexion.visibility = View.GONE
+
                     binding.rvMenu.layoutManager = LinearLayoutManager(this@Characters)
                     binding.rvMenu.adapter = StudentsAdapter(
                         this@Characters,
@@ -56,7 +56,7 @@ class Characters : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<ArrayList<StudentHP>>, t: Throwable) {
-                    binding.pbConexion.visibility = View.GONE
+
                     Toast.makeText(this@Characters, "No hay conexión", Toast.LENGTH_SHORT).show()
                 }
 
@@ -73,7 +73,7 @@ class Characters : AppCompatActivity() {
                     call: Call<ArrayList<StaffHP>>,
                     response: Response<ArrayList<StaffHP>>
                 ) {
-                    binding.pbConexion.visibility = View.GONE
+
 
                     //Log.d(Constants.LOGTAG, "Respuesta del servidor: $response")
 
@@ -90,7 +90,7 @@ class Characters : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<ArrayList<StaffHP>>, t: Throwable) {
-                    binding.pbConexion.visibility = View.GONE
+
                     Toast.makeText(this@Characters, "No hay conexión", Toast.LENGTH_SHORT).show()
                 }
 

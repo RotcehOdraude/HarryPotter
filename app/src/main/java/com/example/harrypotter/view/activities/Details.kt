@@ -45,8 +45,6 @@ class Details : AppCompatActivity() {
                 val actor = response.body()!![0].actor
                 val empty = getString(R.string.EMPTY)
 
-                binding.pbConexion.visibility = View.GONE
-
                 binding.tvCharacterName.text = if (!personaje.isNullOrBlank()) "$personaje" else empty
 
                 binding.tvHouse.text = if (!casa.isNullOrBlank()) "${getString(R.string.house)}: $casa" else "${getString(R.string.house)}: $empty"
@@ -68,7 +66,6 @@ class Details : AppCompatActivity() {
                 call: Call<ArrayList<StudentDetailHP>>,
                 t: Throwable
             ) {
-                binding.pbConexion.visibility = View.GONE
                 Toast.makeText(this@Details, "No hay conexión", Toast.LENGTH_SHORT).show()
             }
         })
