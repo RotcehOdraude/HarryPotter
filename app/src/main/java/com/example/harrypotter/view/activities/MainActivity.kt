@@ -3,6 +3,7 @@ package com.example.harrypotter.view.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 //import android.view.View
 import com.example.harrypotter.databinding.ActivityMainBinding
 
@@ -16,14 +17,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    fun onClickStaff() {
+    fun onClickStaff(view: View) {
         val intent = Intent(this, Characters::class.java)
         val bundle = Bundle()
         bundle.putString("seleccion", "Staff")
         intent.putExtras(bundle)
         startActivity(intent)
     }
-    fun onClickStudent() {
+    fun onClickStudent(view: View) {
         val intent = Intent(this, Characters::class.java)
         val bundle = Bundle()
         bundle.putString("seleccion", "Student")

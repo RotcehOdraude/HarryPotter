@@ -7,112 +7,107 @@
     android:background="@color/md_theme_dark_background"
     tools:context=".view.activities.Details">
 
-    <RelativeLayout
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <ScrollView
-            android:id="@+id/scrollView"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/tvCharacterName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:fontFamily="@font/harry_potter"
+                android:gravity="center_horizontal"
+                android:paddingBottom="10dp"
+                android:textColor="@color/md_theme_dark_secondary"
+                android:textSize="48sp"
+                tools:text="Title" />
 
-                <TextView
-                    android:id="@+id/tvCharacterName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/ubuntu_bold"
-                    android:gravity="center_horizontal"
-                    android:paddingBottom="10dp"
-                    android:textColor="@color/md_theme_dark_secondary"
-                    android:textSize="25sp"
-                    tools:text="Title" />
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/ivImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                app:riv_corner_radius="10dp"
+                tools:src="@mipmap/ic_launcher" />
 
-                <com.makeramen.roundedimageview.RoundedImageView
-                    android:id="@+id/ivImage"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    app:riv_corner_radius="10dp"
-                    tools:src="@mipmap/ic_launcher" />
+            <TextView
+                android:id="@+id/tvActorName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/harry_potter"
+                android:paddingLeft="15dp"
+                android:paddingTop="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/md_theme_dark_secondary"
+                android:textSize="34sp"
+                tools:text="Description" />
 
-                <TextView
-                    android:id="@+id/tvActorName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/ubuntu"
-                    android:paddingLeft="15dp"
-                    android:paddingTop="15dp"
-                    android:paddingRight="15dp"
-                    android:paddingBottom="10dp"
-                    android:textColor="@color/md_theme_dark_secondary"
-                    android:textSize="20sp"
-                    tools:text="Description" />
+            <TextView
+                android:id="@+id/tvHouse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/harry_potter"
+                android:paddingLeft="15dp"
+                android:paddingTop="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/md_theme_dark_secondary"
+                android:textSize="34sp"
+                tools:text="Description" />
 
-                <TextView
-                    android:id="@+id/tvHouse"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/ubuntu"
-                    android:paddingLeft="15dp"
-                    android:paddingTop="15dp"
-                    android:paddingRight="15dp"
-                    android:paddingBottom="10dp"
-                    android:textColor="@color/md_theme_dark_secondary"
-                    android:textSize="20sp"
-                    tools:text="Description" />
+            <TextView
+                android:id="@+id/tvDateOfBirth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/harry_potter"
+                android:paddingLeft="15dp"
+                android:paddingTop="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/md_theme_dark_secondary"
+                android:textSize="34sp"
+                tools:text="Description" />
 
-                <TextView
-                    android:id="@+id/tvDateOfBirth"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/ubuntu"
-                    android:paddingLeft="15dp"
-                    android:paddingTop="15dp"
-                    android:paddingRight="15dp"
-                    android:paddingBottom="10dp"
-                    android:textColor="@color/md_theme_dark_secondary"
-                    android:textSize="20sp"
-                    tools:text="Description" />
+            <TextView
+                android:id="@+id/tvAncestry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/harry_potter"
+                android:paddingLeft="15dp"
+                android:paddingTop="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/md_theme_dark_secondary"
+                android:textSize="34sp"
+                tools:text="Description" />
 
-                <TextView
-                    android:id="@+id/tvAncestry"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/ubuntu"
-                    android:paddingLeft="15dp"
-                    android:paddingTop="15dp"
-                    android:paddingRight="15dp"
-                    android:paddingBottom="10dp"
-                    android:textColor="@color/md_theme_dark_secondary"
-                    android:textSize="20sp"
-                    tools:text="Description" />
+            <TextView
+                android:id="@+id/tvPatronus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/harry_potter"
+                android:paddingLeft="15dp"
+                android:paddingTop="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/md_theme_dark_secondary"
+                android:textSize="34sp"
+                tools:text="Description" />
+        </LinearLayout>
+    </ScrollView>
 
-                <TextView
-                    android:id="@+id/tvPatronus"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/ubuntu"
-                    android:paddingLeft="15dp"
-                    android:paddingTop="15dp"
-                    android:paddingRight="15dp"
-                    android:paddingBottom="10dp"
-                    android:textColor="@color/md_theme_dark_secondary"
-                    android:textSize="20sp"
-                    tools:text="Description" />
-            </LinearLayout>
-        </ScrollView>
-
-    </RelativeLayout>
 
     <ProgressBar
         android:id="@+id/pbConexion"

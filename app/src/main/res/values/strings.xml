@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">HarryPotter</string>
     <string name="ejemplo">Ejemplo</string>
     <string name="dateOfBirth" translatable="false">Fecha de Nacimiento</string>
@@ -6,6 +6,9 @@
     <string name="ancestry" translatable="false">Ascendencia</string>
     <string name="patronus" translatable="false">Patronus</string>
     <string name="actor" translatable="false">Actor</string>
-    <string name="characterName" translatable="false"></string>
+    <string name="characterName" translatable="false">RANDOM</string>
     <string name="EMPTY" translatable="false">VACIO</string>
+    <string name="btnStudentString">Estudiante</string>
+    <string name="btnStaffString" tools:ignore="Typos">Profesor</string>
+    <string name="tvTitle">Selecciona una opcion</string>
 </resources>
